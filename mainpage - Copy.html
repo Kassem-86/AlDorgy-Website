@@ -1,0 +1,164 @@
+
+<html>
+<head>
+<title>ELDorgy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="header">
+<p style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;" >ALDorgy</p>
+<div><input type="text" placeholder="  Type Here" class="searchinput" style="width: 500px; height: 40px;border-radius: 20px;align-items: center; stroke: black;border-color: black;" ></div>
+<ul id="navbar">
+        <li><a href="mainpage.html">Home</a></li>
+        <li><a href="Wishlist.html">Wishlist</a></li>
+        <li><a href="Cart.html">Cart</a></li>
+        <li><a href="Settings.html">Settings</a></li>
+
+</ul>
+</section>
+<hr>
+<img name="slide" width="1000" height="300" style="margin-left: 350px; margin-top: 100px;">
+<div style="position: bottom; ">
+	<div class="center-wrapper">
+		<button id="shopnow"> <a href="" style="color: azure;">Shop Now!</a></button>
+	</div>
+	
+</div>
+<div style="align-items: center; justify-content: space-between; float: left;">
+
+<p style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;text-align: center;" >Featured Products</p>
+<a href="Details.html">
+<div class="container">
+	<div class="item" style="margin-left: 130px;">
+        <img src="nikebig.webp" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product:BlazerMid </span><br>
+            <span style="font-weight: 600;">Price: 100$ </span>
+        </div>
+    </div>
+</a>
+    
+    <div class="item">
+        <img src="item2.jpg.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product: Iphone14 </span><br>
+            <span style="font-weight: 600;">Price: 500$ </span>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="ps5.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product: PS5 </span><br>
+            <span style="font-weight: 600;">Price: 600$ </span>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="ps4.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product: PS4 </span><br>
+            <span style="font-weight: 600;">Price: 400$ </span>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top: 160px;">
+	<div class="item" style="margin-left: 130px;">
+        <img src="zara.png" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product:JACKIT </span><br>
+            <span style="font-weight: 600;">Price: 100$ </span>
+        </div>
+    </div>
+    
+    <div class="item">
+        <img src="control.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product:Controller </span><br>
+            <span style="font-weight: 600;">Price: 60$ </span>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="Air Fry.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product: airfryer </span><br>
+            <span style="font-weight: 600;">Price: 200$ </span>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="fifa333.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product: Fifa21 </span><br>
+            <span style="font-weight: 600;">Price: 10$ </span>
+        </div>
+    </div>
+</div><div class="container" style="margin-top: 160px;">
+	<div class="item" style="margin-left: 130px;">
+        <img src="nike.webp" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product:AirJordan </span><br>
+            <span style="font-weight: 600;">Price: 200$ </span>
+        </div>
+    </div>
+    
+    <div class="item">
+        <img src="N53406041A_1.jpg.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product: 4K TV </span><br>
+            <span style="font-weight: 600;">Price: 200$ </span>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="xbxox.avif" alt="" height="200px" width="150px">
+        <div>
+            <span style="font-weight: 600;">Product: Xbox S </span><br>
+            <span style="font-weight: 600;">Price: 300$ </span>
+        </div>
+    </div>
+
+    <div class="item">
+    <img src="xseres.avif" alt="" height="200px" width="150px">
+    <div>
+			
+            <span style="font-weight: 600;">Product: Xbox X </span><br>
+            <span style="font-weight: 600;">Price: 600$ </span>
+        </div>
+    </div>
+</div>
+
+<hr style="margin-top: 100px;">
+<ul id="navbar" style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;">
+	<li><a href="mainpage.html">Help</a></li>
+	<li><a href="Wishlist.html">About Us</a></li>
+	<li><a href="Cart.html">Privacy Policy</a></li>
+</ul>
+
+
+
+<script>
+var i = 0; 
+var images = [];	
+var time = 3000;
+	 
+images[0]='2.png';
+images[1]='3.png';
+images[2]='4.jpeg';
+images[3]='sale1.jpeg';
+function changeImg(){
+	document.slide.src = images[i];
+	if(i < images.length - 1){
+	  i++; 
+	} else { 
+		i = 0;
+	}
+	setTimeout("changeImg()", time);
+}
+
+// Run function when page loads
+window.onload=changeImg;
+</script>
+</body>
+</html>   

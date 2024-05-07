@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALDorgy Signup</title>
+</head>
+<style>
+    .TextFont{
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .Bstyle:hover{
+            opacity: 0.5;
+            border-radius: 30px;
+            object-fit: scale-down;
+    }
+</style>
+<body>
+    <form class="TextFont" id="form" action="Sign up process.php" method="post">
+    <p style="letter-spacing: 1px; font-size: 40px; padding-top:10px; padding-right: 50px;" >ALDorgy</p>
+    <P style="padding-right: 160px">Username</P>
+    <input style="width: 200px;" type="text" id="Username" name="username">
+    <P style="padding-right: 180px">Email</P>
+    <input style="width: 200px;" type="mail" id="mail" name="mail">
+    <P style="padding-right: 140px">Mobile Number</P>
+    <input style="width: 200px;" type="text" id="Mobile" name="mobile_number">
+    <P style="padding-right: 160px">Password</P>
+    <input style="width: 200px;" type="password" id="pass" name="password">
+    <P style="padding-right: 120px">Confrirm Password</P>
+    <input style="width: 200px;" type="password" id="passconf" name="retype-password">
+    <br><br>
+    <input type="checkbox" id="Service">I have read and i do accept <a href="k.html">terms of service</a>
+    <br>
+    <input type="checkbox" id="Policy">I have read and i do accept <a href="k.html">Privacy Policy</a>
+    <br><br>
+    <input type="submit" value="Sign up"  class="Bstyle" style="cursor: pointer; color: white; border: 1px solid black; border-radius: 5px ; width: 200px; height: 25px; background-color: black;">
+    <br>
+    <p>Or Sign up With</p>
+    <a href="https://www.facebook.com/"><img src="Facebook.jpg" alt="Error" height="40px" width="40px" style="margin-right: 40px;"></a>
+    <a href="https://www.instagram.com/"><img src="Instagram.jpg" alt="Error" height="40px" width="40px"></a>
+    <a href="https://www.google.com/index.html"><img src="google.jpg" alt="Error" height="45px" width="45px" style="margin-left: 40px; padding-top: 10px;"></a>
+    <a style="position: absolute; top:550px; left: 46%;" href="Login_page.html">already have an account</a>
+
+    </form>
+
+    <script>
+        function fillForm(){
+          var pass = document.getElementById("pass");
+          var username = document.getElementById("Username");
+          var Email = document.getElementById("mail");
+          var Mobile = document.getElementById("Mobile");
+          var Service = document.getElementById("Service");
+          var Policy = document.getElementById("Policy");
+            if(pass.value == "" || username.value == "" || Email.value == "" || Mobile.value == "" || !Service.checked || !Policy.checked){
+                alert("Please fill in all fields and accept terms of service and privacy policy.");
+                return false;
+            }
+            else
+             return true;
+        }
+        function cheakPass(){
+            var  pass = document.getElementById("pass");
+           var passconf = document.getElementById("passconf");
+           
+           if(pass.value != passconf.value){
+                alert("Passwords do not match.")
+                passconf.focus();
+                return false;
+            }
+            else
+             return true;
+        }
+        function validateMobileNumber(){
+            var phoneNumber = document.getElementById("Mobile")
+            var number = /^\d+$/;   
+            if(!number.test(phoneNumber.value)){
+            alert("Mobile number must contain only digits.")
+            phoneNumber.focus();
+            return false;
+            }
+            else
+             return true;
+        }
+       
+    </script>
+
+</body>
+</html>

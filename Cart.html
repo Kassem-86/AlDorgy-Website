@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <style>
-
+.Bstyle:hover{
+            opacity: 0.5;
+            border-radius: 30px;
+            object-fit: scale-down;
+    }
+        .wishlist-button:hover {
+            background-color: #808080;
+        }
     .boxwidth {
         width: 40%;
     }
@@ -31,99 +38,162 @@
    height: 0.8cm;
    letter-spacing: 1px; font-family: Arial, sans-serif;
 }
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, 
+    sans-serif;font-size: 20px; 
+    font-weight: 200;
+    padding: 5px 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow:0 2px 5px rgb(255, 255, 255);
+    }
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+
+}
+#navbar li a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+    color:rgb(0, 0, 0);
+
+}
+
+/* Style for the payment methods section */
 
 
     </style>
 </head>
 <body>
-    <p style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600;">ALDorgy</p>
-    <p style="position: absolute; top: 115px; ; left: 40px;">
+    <section id="header">
+        <p style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;" >ALDorgy</p>
+        <div><input type="text" placeholder="  Type Here" class="searchinput" style="width: 500px; height: 40px;border-radius: 20px;align-items: center; stroke: black;border-color: black;" ></div>
+        <ul id="navbar">
+                <li><a href="mainpage.html">Home</a></li>
+                <li><a href="Wishlist.html">Wishlist</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+                <li><a href="Settings.html">Settings</a></li>
+        </ul>
+        </section>
+        <hr>
         <b style="font-size: x-large;"> &lt; Checkout</b> <br>
-        <span style="position: absolute; top: 40px; ; left:30px; font-weight: bold; font-size: larger;" > Orderdetails  </span>
+        <span style="position: absolute; top: 190px; ; left:30px; font-weight: bold; font-size: larger;" > Orderdetails  </span>
         <br>
-        <img src="nike.png " alt="" height="300px" width="300px" style=" position: relative; top:40px;"> <br>
-        <img src="rectangle box.png" alt="" style="position: absolute; left: 20px; bottom: -35px;;" width="250">
-        <span style="position:absolute; bottom: 2px; left: 30px; ;" > <span style="font-weight: bold;">Product:</span> Nike Air Jordan </span>
-        <span style="position:absolute; bottom: -20px; left: 30px;" > <span style="font-weight: bold;"> Price:</span>100$ </span>
+        <body>
+            <div style="position: absolute; left: 50px; ; top: 20px;;">
+              <img src="nike.png " alt="" height="300px" width="300px" style=" position: absolute; top: 200px ;"> <br>
+              <div style="position: absolute; top: 430px;">
+              <img src="rectangle box.png" alt="" style="position: absolute; left: 20px; ;" width="250">
+              <div style="position: absolute t;"><span style="position:absolute;  left: 30px; ;" > <span style="font-weight: bold;">Product:</span> NikeAirJordan </span>
+              <span style="position:absolute;  left: 30px; top: 40px; ;" > <span style="font-weight: bold;"> Price:</span>100$ </span></div></div>
+            </div>
     </p>    
     <p>
-        <form style="position: absolute; top: 30%; left: 70%; " id="myForm">
-            <p style="font-weight: bold; font-size: x-large; ">Select Payment method</p>
-            <p>
-                <span style="font-size: large; font-weight: bolder;">Cash on delivery <img src="cash3.jpg" height="20" width="20" alt=""></span> 
-                <input type="radio" id="Cash" name="payment" value="Cash" required onclick="hideVisaInfo()">
-                <br>
-            </p>
-            <p>
-                <span style="font-size: large; font-weight: bolder;">Points</span> 
-                <input type="radio" id="Points" name="payment" value="Points" required onclick="hideVisaInfo()">
-                <br>
-            </p>
-            <p>
-                <span style="font-size: large; font-weight: bolder;">Visa <img src="MasterCard_Logo.svg.png" alt="" width="30" height="20"></span>  
-                <input type="radio" id="Visa" name="payment" value="Visa" required onclick="showVisaInfo()">  
-                <br>
-            </p>
-            <div id="visaInfo" style="display: none;">
-                <span style="font-weight: bolder;">Card Number</span><br> 
-                <input type="text" placeholder=" xxxx xxxx xxxx xxxx" maxlength="12" required id="visaInfo">  <br>
-                <p style="position: absolute;top: 220px; ;">
-                    <span style="font-weight: bolder;">Expiry(MM/YY)</span><br> 
-                    <input type="text" placeholder="12/24" maxlength="5" class="boxwidth" required id="visaInfo">
-                </p>
-                <p style="position: absolute; left: 150px; top: 220px;;">
-                    <span style="font-weight: bolder;">CVV</span><br> 
-                    <input type="text" placeholder="123" maxlength="5" class="boxwidth2" required id="visaInfo">
-                </p>
-                <br>
-                <p style="position:absolute;top: 270px;">
-                    <span style="font-weight: bolder;">Name on card</span><br>
-                    <input type="text" placeholder="Full name" required id="visaInfo">
+        <form style="position: absolute; top: 30%; left: 70%; " id="myForm" action="Confirm.html">
+            <div id="paymentSection">
+                <p style="font-weight: bold; font-size: x-large; ">Select Payment method</p>
+                <p>
+                    <span style="font-size: large; font-weight: bolder;">Cash on delivery <img src="cash3.jpg" height="20" width="20" alt=""></span> 
+                    <input type="radio" id="Cash" name="payment" value="Cash" required onclick="hideVisaInfo()">
                     <br>
                 </p>
+                <p>
+                    <span style="font-size: large; font-weight: bolder;">Points</span> 
+                    <input type="radio" id="Points" name="payment" value="Points" required onclick="hideVisaInfo()">
+                    <br>
+                </p>
+                <p>
+                    <span style="font-size: large; font-weight: bolder;">Visa <img src="MasterCard_Logo.svg.png" alt="" width="30" height="20"></span>  
+                    <input type="radio" id="Visa" name="payment" value="Visa" required onclick="showVisaInfo()">  
+                    <br>
+                </p>
+                <div id="visaInfo" style="display: none;">
+                    <span style="font-weight: bolder;">Card Number</span><br> 
+                    <input type="text" placeholder=" xxxx xxxx xxxx xxxx" maxlength="12" required id="cardNumber">  <br>
+                    <p style="position: absolute;top: 220px; ;">
+                        <span style="font-weight: bolder;">Expiry(MM/YY)</span><br> 
+                        <input type="text" placeholder="12/24" maxlength="5" class="boxwidth" required id="expiry">
+                    </p>
+                    <p style="position: absolute; left: 150px; top: 220px;;">
+                        <span style="font-weight: bolder;">CVV</span><br> 
+                        <input type="text" placeholder="123" maxlength="5" class="boxwidth2" required id="cvv">
+                    </p>
+                    <br>
+                    <p style="position:absolute;top: 270px;">
+                        <span style="font-weight: bolder;">Name on card</span><br>
+                        <input type="text" placeholder="Full name" required id="fullName">
+                        <br>
+                    </p>
+                </div>
+                
             </div>
-            <p style="position: absolute; top: 150%; left: -170%;"> <input type="button" value="Confirm Order" class=" confirmbox" onclick="goToAnotherPage()"></p>
-            <p style="position: absolute; top: 170%;; left:-170%;" > <input type="button" value="Continue Shopping" class="continuebox" ></p>
+
+        
         </form>
-    </p>
+        <form action="Confirm.html"><p style="position: absolute; top: 70%; left: 43%;">         <input type="submit" value="confirm"  class="" style="cursor: pointer; color: white; border: 1px solid black; border-radius: 5px ; width: 500%; height: 0.8cm; background-color: black ; font-weight: bolder;"></form>
+
+    </p>   
+<form action="mainpage.html">  <p style="position: absolute; top: 75%; left: 43%;" >         <input type="submit" value="continue shopping"  class="Bstyle" style="cursor: pointer; color: black; border: 1px solid black; border-radius: 5px ; width: 235%; height: 0.8cm; background-color: white; font-weight: bolder;">
+</form>
+    
 <script>
     function showVisaInfo() {
         var visaInfo = document.getElementById("visaInfo");
         if (document.getElementById("Visa").checked) {
             visaInfo.style.display = "block";
+            // Fill Visa info text boxes
+            document.getElementById("cardNumber").value ; // Example card number
+            document.getElementById("expiry").value  // Example expiry date
+            document.getElementById("cvv").value ; // Example CVV
+            document.getElementById("fullName"); // Example name on card
         }
     }
+    
 
     function hideVisaInfo() {
         var visaInfo = document.getElementById("visaInfo");
         visaInfo.style.display = "none";
     }
     
-    function goToAnotherPage(event) {
-        
-        if (document.getElementById("Visa").checked  || document.getElementById ("Cash").checked ||  document.getElementById ("Points").checked ) {
+    function validateAndGoToAnotherPage() {
+        if (document.getElementById("Visa").checked) {
+            // Check if Visa info text boxes are filled
+            var cardNumber = document.getElementById("cardNumber").value;
+            var expiry = document.getElementById("expiry").value;
+            var cvv = document.getElementById("cvv").value;
+            var fullName = document.getElementById("fullName").value;
+
+            if (cardNumber === "" || expiry === "" || cvv === "" || fullName === "") {
+                alert("Please fill in all Visa information.");
+            } else {
+                // Go to another page
+                window.location.href = "file:///D:/MyProjects/MyHtml/Confirm.html";
+            }
+        } else if (document.getElementById("Cash").checked || document.getElementById("Points").checked) {
+            // Go to another page
             window.location.href = "file:///D:/MyProjects/MyHtml/Confirm.html";
+        } else {
+            alert("Please select a payment method.");
         }
-                                                                                                                   
-                                                                                            
-         else{
-        alert("Please select a payment method.");
-    }  
+    } 
 
+    function Continueshopping(){
 
-        } 
-           
+        window.location.href = "file:///D:/MyProjects/MyHtml/mainpage.html";
+
+    }
 </script>
 <div >
 
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
