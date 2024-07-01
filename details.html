@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,44 +6,44 @@
     <title>ELDorgy</title>
 
     <style>
-        /* Global Styles */
+        a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }  
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        #header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Arial, 
-    sans-serif;font-size: 20px; 
-    font-weight: 200;
-    padding: 5px 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow:0 2px 5px rgb(255, 255, 255);
-    }
-#navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
-    
-}
-#navbar li a{
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: 600;
-    color:rgb(0, 0, 0);
-    
-}
-#navbar li a:hover{
-color: rgb(120, 120, 120);
-}
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+            font-size: 20px; 
+            font-weight: 200;
+            padding: 5px 5px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 2px 5px rgb(255, 255, 255);
+        }
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+        }
+        #navbar li a {
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: rgb(0, 0, 0);
+        }
+        #navbar li a:hover {
+            color: rgb(120, 120, 120);
+        }
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -52,9 +51,9 @@ color: rgb(120, 120, 120);
         }
         .image {
             float: left;
-            width: 400px; /* Adjust width for more width */
+            width: 400px; 
             height: auto;
-            margin-right: 30px; /* Add space between image and text */
+            margin-right: 30px;
         }
         .text {
             font-size: 15px;
@@ -87,55 +86,104 @@ color: rgb(120, 120, 120);
     </style>
 </head>
 <body>
-<section id="header">
-    <p style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;" >ALDorgy</p>
-    <div><input type="text" placeholder="  Type Here" class="searchinput" style="width: 500px; height: 40px;border-radius: 20px;align-items: center; stroke: black;border-color: black;" ></div>
-    <ul id="navbar">
-        <li><a href="mainpage.html">Home</a></li>
-        <li><a href="Wishlist.html">Wishlist</a></li>
-        <li><a href="Cart.html">Cart</a></li>
-        <li><a href="Settings.html">Settings</a></li>
+    <section id="header">
+        <p style="letter-spacing: 1px; font-family: Arial, sans-serif; font-size: 40px; font-weight: 600; color: #000000;">ALDorgy</p>
+        <div><input type="text" placeholder="  Type Here" class="searchinput" style="width: 500px; height: 40px; border-radius: 20px; align-items: center; stroke: black; border-color: black;"></div>
+        <ul id="navbar">
+            <li><a href="mainpage.html">Home</a></li>
+            <li><a href="sale.html">Sales!</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <li><a href="Login_page.html" style="border: 4px solid black; border-radius: 10px;">Log In</a></li>
+        </ul>
+    </section>
+    <hr>
+    <div class="container">
+        <img src="minnike.png" alt="Second Image" class="image" style="min-width: 200px; height: 500px; width: 5px;">
+        <img src="nikebig.webp" alt="Your Image" class="image">
+        <div class="text">
+            <p>
+                <span style="font-size: 50px;"><b>Nike Blazer Mid Pro Club Men's Shoes: </b></span>
+                <br>
+                Being rooted doesn't mean you can't step forwards.
+                <br>
+                Keeping the classic simplicity and comfort you love, your favourite wardrobe staple gets remastered for the modern era.
+                <br>
+                Extra rubber extends from the midsole to the Swoosh for a bold twist (and a little nod to Nike innovation from the '70s).
+            </p>
+        </div>
+        <div class="quantity-and-price">
+            <span style="font-size: 30px;"><b> Quantity:</b>
+                <select id="numberSelect" name="numberSelect" onchange="updatePrice()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </span>
+            <br>
+            <br>
+            <span style="font-size: 30px;"><b>Price: <span id="price">300</span>$</b></span>
+        </div>
+        <a href="Wishlist.html"><button class="wishlist-button">Add to Wishlist</button></a>
+        <a href="Cart.html"><button class="wishlist-button">Add to cart</button></a>
+    </div>
+    <p style="letter-spacing: 1px; font-family: Arial, sans-serif; font-size: 40px; font-weight: 600; color: #000000; text-align: center; margin-top: 200px;">Related Products</p>
+    <div class="container" style="display: flex; justify-content: flex-start; text-align: center; margin: 0 70px; margin-left: 150px; margin-top: 100px;">
+        <div class="item" style="margin-left: 90px; justify-content: space-between;">
+            <a href="Details.html">
+                <img src="nike.webp" alt="" height="200px" width="150px">
+                <div>
+                    <span style="font-weight: 600;">Product: AirJordan</span><br>
+                    <span style="font-weight: 600;">Price: 200$</span>
+                </div>
+            </a>
+        </div>
+        <div class="item" style="margin-left: 180px;">
+            <a href="Details.html">
+                <img src="item2.jpg.avif" alt="" height="200px" width="150px">
+                <div>
+                    <span style="font-weight: 600;">Product: iPhone 14</span><br>
+                    <span style="font-weight: 600;">Price: 500$</span>
+                </div>
+            </a>
+        </div>
+        <div class="item" style="margin-left: 150px;">
+            <a href="Details.html">
+                <img src="ps5.avif" alt="" height="200px" width="150px">
+                <div>
+                    <span style="font-weight: 600;">Product: Sony PS5</span><br>
+                    <span style="font-weight: 600;">Price: 600$</span>
+                </div>
+            </a>
+        </div>
+        <div class="item" style="margin-left: 150px;">
+            <a href="Details.html">
+                <img src="ps4.avif" alt="" height="200px" width="150px">
+                <div>
+                    <span style="font-weight: 600;">Product: Sony PS4</span><br>
+                    <span style="font-weight: 600;">Price: 400$</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <hr style="margin-top: 200px;">
+    <ul id="navbar" style="letter-spacing: 1px; font-family: Arial, sans-serif; font-size: 40px; font-weight: 600; color: #000000;">
+        <li><a href="help.html">Help</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="privcy.html">Privacy Policy</a></li>
     </ul>
-</section>
-<hr>
-<div class="container">
-    <img src="minnike.png" alt="Second Image" class="image" style="min-width: 200px; height: 500px; width: 5px; ;">
-    <img src="nikebig.webp" alt="Your Image" class="image">
-    <div class="text">
-        <p>
-            <span style="font-size: 50px;"><b>Nike Blazer Mid Pro Club Men's Shoes:  </b></span>
-            <br>
-            Being rooted doesn't mean you can't step forwards.
-            <br>
-            Keeping the classic simplicity and comfort you love, your favourite wardrobe staple gets remastered for the modern era.
-            <br>
-            Extra rubber extends from the midsole to the Swoosh for a bold twist (and a little nod to Nike innovation from the '70s).
 
-        </p>
-    </div>
-    <div class="quantity-and-price">
-        <span style="font-size: 30px;"><b> Quantity:</b>
-            <select id="numberSelect" name="numberSelect">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </span>
-        <br>
-        <br>
-        <span style="font-size: 30px;"><b> Price:1500 egp</b></span>
-    </div>
-    <a href=""><button class="wishlist-button">Add to Wishlist</button></a>
-    <a href="Cart.html"><button class="wishlist-button">Add to cart</button></a>
-</div>
-<hr style="margin-top: 200px;">
-<ul id="navbar" style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;">
-	<li><a href="mainpage.html">Help</a></li>
-	<li><a href="Wishlist.html">About Us</a></li>
-	<li><a href="Cart.html">Privacy Policy</a></li>
-</ul>
-
+    <script>
+        function updatePrice() {
+            var select = document.getElementById("numberSelect");
+            var priceElement = document.getElementById("price");
+            var basePrice = 300; 
+            var quantity = select.value;
+            var newPrice = basePrice * quantity;
+            priceElement.innerText = newPrice;
+        }
+    </script>
 </body>
 </html>

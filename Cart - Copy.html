@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <style>
-
+.Bstyle:hover{
+            opacity: 0.5;
+            border-radius: 30px;
+            object-fit: scale-down;
+    }
+        .wishlist-button:hover {
+            background-color: #808080;
+        }
     .boxwidth {
         width: 40%;
     }
@@ -38,7 +44,7 @@
     justify-content: space-between;
     font-family: Arial, 
     sans-serif;font-size: 20px; 
-    font-weight: 600;
+    font-weight: 200;
     padding: 5px 5px;
     background-color: rgb(255, 255, 255);
     box-shadow:0 2px 5px rgb(255, 255, 255);
@@ -61,6 +67,10 @@
     color:rgb(0, 0, 0);
 
 }
+
+/* Style for the payment methods section */
+
+
     </style>
 </head>
 <body>
@@ -68,11 +78,10 @@
         <p style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;" >ALDorgy</p>
         <div><input type="text" placeholder="  Type Here" class="searchinput" style="width: 500px; height: 40px;border-radius: 20px;align-items: center; stroke: black;border-color: black;" ></div>
         <ul id="navbar">
-                <li><a href="mainpage.html">Home </a></li>
-                <li><a href="sale.html">Sales!</a></li>
+                <li><a href="mainpage.html">Home</a></li>
                 <li><a href="Wishlist.html">Wishlist</a></li>
-                <li><a href="Cart.html">Cart<hr></a></li>
-        
+                <li><a href="Cart.html">Cart</a></li>
+                <li><a href="Settings.html">Settings</a></li>
         </ul>
         </section>
         <hr>
@@ -80,16 +89,16 @@
         <span style="position: absolute; top: 190px; ; left:30px; font-weight: bold; font-size: larger;" > Orderdetails  </span>
         <br>
         <body>
-            <div class="item" style="position: absolute; left: 30px; top: 251px;">
-                <img src="item2.jpg.avif" alt="" height="200px" width="150px">
-                <div>
-                    <span style="font-weight: 600;">Product: Iphone14 </span><br>
-                    <span style="font-weight: 600;">Price: 500$ </span>
-                </div>
+            <div style="position: absolute; left: 50px; ; top: 20px;;">
+              <img src="nike.png " alt="" height="300px" width="300px" style=" position: absolute; top: 200px ;"> <br>
+              <div style="position: absolute; top: 430px;">
+              <img src="rectangle box.png" alt="" style="position: absolute; left: 20px; ;" width="250">
+              <div style="position: absolute t;"><span style="position:absolute;  left: 30px; ;" > <span style="font-weight: bold;">Product:</span> NikeAirJordan </span>
+              <span style="position:absolute;  left: 30px; top: 40px; ;" > <span style="font-weight: bold;"> Price:</span>100$ </span></div></div>
             </div>
     </p>    
     <p>
-        <form style="position: absolute; top: 30%; left: 70%; " id="myForm">
+        <form style="position: absolute; top: 30%; left: 70%; " id="myForm" action="Confirm.html">
             <div id="paymentSection">
                 <p style="font-weight: bold; font-size: x-large; ">Select Payment method</p>
                 <p>
@@ -125,22 +134,30 @@
                         <br>
                     </p>
                 </div>
+                
             </div>
-            <p style="position: absolute; top: 190%; left: -5%;"> <input type="button" value="Confirm Order" class=" confirmbox" onclick="validateAndGoToAnotherPage()" style="border-radius: 10px;"></p>
-            <a href="mainpage - Copy.html"><p style="position: absolute; top: 210%;; left:-5%;" > <input type="button" value="Continue Shopping" class="continuebox" style="border-radius: 10px;"></p></a>
+
+        
         </form>
-    </p>
+        <form action="Confirm.html"><p style="position: absolute; top: 70%; left: 43%;">         <input type="submit" value="confirm"  class="" style="cursor: pointer; color: white; border: 1px solid black; border-radius: 5px ; width: 500%; height: 0.8cm; background-color: black ; font-weight: bolder;"></form>
+
+    </p>   
+<form action="mainpage.html">  <p style="position: absolute; top: 75%; left: 43%;" >         <input type="submit" value="continue shopping"  class="Bstyle" style="cursor: pointer; color: black; border: 1px solid black; border-radius: 5px ; width: 235%; height: 0.8cm; background-color: white; font-weight: bolder;">
+</form>
+    
 <script>
     function showVisaInfo() {
         var visaInfo = document.getElementById("visaInfo");
         if (document.getElementById("Visa").checked) {
             visaInfo.style.display = "block";
-            document.getElementById("cardNumber").value ; 
-            document.getElementById("expiry").value  
-            document.getElementById("cvv").value ;
-            document.getElementById("fullName"); 
+            // Fill Visa info text boxes
+            document.getElementById("cardNumber").value ; // Example card number
+            document.getElementById("expiry").value  // Example expiry date
+            document.getElementById("cvv").value ; // Example CVV
+            document.getElementById("fullName"); // Example name on card
         }
     }
+    
 
     function hideVisaInfo() {
         var visaInfo = document.getElementById("visaInfo");
@@ -149,6 +166,7 @@
     
     function validateAndGoToAnotherPage() {
         if (document.getElementById("Visa").checked) {
+            // Check if Visa info text boxes are filled
             var cardNumber = document.getElementById("cardNumber").value;
             var expiry = document.getElementById("expiry").value;
             var cvv = document.getElementById("cvv").value;
@@ -157,23 +175,25 @@
             if (cardNumber === "" || expiry === "" || cvv === "" || fullName === "") {
                 alert("Please fill in all Visa information.");
             } else {
-                window.location.href = "Confirm.html";
+                // Go to another page
+                window.location.href = "file:///D:/MyProjects/MyHtml/Confirm.html";
             }
         } else if (document.getElementById("Cash").checked || document.getElementById("Points").checked) {
-            window.location.href ="Confirm.html";
+            // Go to another page
+            window.location.href = "file:///D:/MyProjects/MyHtml/Confirm.html";
         } else {
             alert("Please select a payment method.");
         }
     } 
+
+    function Continueshopping(){
+
+        window.location.href = "file:///D:/MyProjects/MyHtml/mainpage.html";
+
+    }
 </script>
 <div >
 
 </div>
-<hr style="margin-top: 700px;">
-<ul id="navbar" style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;">
-    <li><a href="mainpage.html">Help</a></li>
-    <li><a href="Wishlist.html">About Us</a></li>
-    <li><a href="Cart.html">Privacy Policy</a></li>
-</ul>
 </body>
 </html>

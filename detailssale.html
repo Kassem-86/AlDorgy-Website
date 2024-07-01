@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELDorgy</title>
+    <style>
+        a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 200;
+            padding: 5px 5px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 2px 5px rgb(255, 255, 255);
+        }
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+        }
+        #navbar li a {
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: rgb(0, 0, 0);
+        }
+        #navbar li a:hover {
+            color: rgb(120, 120, 120);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+        .image {
+            float: left;
+            width: 400px;
+            height: auto;
+            margin-right: 30px;
+        }
+        .text {
+            font-size: 15px;
+            font-weight: 600;
+            overflow: hidden;
+        }
+        .quantity-and-price {
+            margin-top: 20px;
+        }
+        .wishlist-button {
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            width: 300px;
+            height: 35px;
+            cursor: pointer;
+            border-radius: 9px;
+            margin-top: 20px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .wishlist-button:hover {
+            background-color: #808080;
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <p style="letter-spacing: 1px; font-family: Arial, sans-serif;font-size: 40px; font-weight: 600; color: #000000;">ALDorgy</p>
+        <div>
+            <input type="text" placeholder="  Type Here" class="searchinput" style="width: 500px; height: 40px; border-radius: 20px; align-items: center; stroke: black; border-color: black;">
+        </div>
+        <ul id="navbar">
+            <li><a href="mainpage.html">Home</a></li>
+            <li><a href="sale.html">Sales!</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <li><a href="Login_page.html" style="border: 4px solid black; border-radius: 10px;">Log In</a></li>
+        </ul>
+    </section>
+    <hr>
+    <div class="container">
+        <img src="airdet.png" class="image" style="min-width: 100px; height: 500px; width: 5px;">
+        <img src="airpods.avif" class="image" style="width: fit-content;">
+        <div class="text">
+            <p>
+                <span style="font-size: 50px;"><b>Apple AirPods 2:</b></span>
+                <br>
+                Wireless. Effortless. Magical.
+                <br>
+                With plenty of talk and listen time, and an available wireless charging case.
+                <br>
+                AirPods deliver an incredible wireless headphone experience. Simply take them out and they’re ready to use with all your devices.
+            </p>
+        </div>
+        <div class="quantity-and-price">
+            <span style="font-size: 30px;"><b>Quantity:</b>
+                <select id="numberSelect" name="numberSelect" onchange="updatePrice()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </span>
+            <br>
+            <br>
+            <span style="font-size: 30px; text-decoration: line-through;"><b>Old Price: 1500 EGP</b></span>
+            <br>
+            <span style="font-size: 30px;"><b>New Price: <span id="newPrice">1200</span> EGP</b></span>
+        </div>
+        <a href="Wishlist.html"><button class="wishlist-button">Add to Wishlist</button></a>
+        <a href="Cart.html"><button class="wishlist-button" style="margin-left: 400px;">Add to cart</button></a>
+    </div>
+    <p style="letter-spacing: 1px; font-family: Arial, sans-serif; font-size: 40px; font-weight: 600; color: #000000; text-align: center;">Related Products</p>
+    <a href="Details.html">
+        <div class="container" style="display: flex; justify-content: flex-start; text-align: center; margin: 0 70px; margin-left: 150px;">
+            <div class="item" style="margin-left: 130px;">
+                <a href="detailssale.html">
+                    <img src="macbook.avif" alt="" height="200px" width="150px">
+                    <div>
+                        <span style="font-weight: 600;">Product: MacBook Air</span><br>
+                        <span style="font-weight: 600; text-decoration: line-through;">Price: 1000$</span><br>
+                        <span style="font-weight: 600;">Price: 900$</span>
+                    </div>
+                </a>
+            </div>
+            <div class="item" style="margin-left: 150px;">
+                <a href="detailssale.html">
+                    <img src="watch.avif" alt="" height="200px" width="150px">
+                    <div>
+                        <span style="font-weight: 600;">Product: Smartwatch</span><br>
+                        <span style="font-weight: 600; text-decoration: line-through;">Price: 100$</span><br>
+                        <span style="font-weight: 600;">Price: 50$</span>
+                    </div>
+                </a>
+            </div>
+            <div class="item" style="margin-left: 170px;">
+                <a href="detailssale.html">
+                    <img src="whey.avif" alt="" height="200px" width="150px">
+                    <div>
+                        <span style="font-weight: 600;">Product: Whey Protein</span><br>
+                        <span style="font-weight: 600; text-decoration: line-through;">Price: 150$</span><br>
+                        <span style="font-weight: 600;">Price: 100$</span>
+                    </div>
+                </a>
+            </div>
+            <div class="item" style="margin-left: 170px;">
+                <a href="detailssale.html">
+                    <img src="shorts.avif" alt="" height="200px" width="150px">
+                    <div>
+                        <span style="font-weight: 600;">Product: Nike Shorts</span><br>
+                        <span style="font-weight: 600; text-decoration: line-through;">Price: 200$</span><br>
+                        <span style="font-weight: 600;">Price: 100$</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </a>
+    <hr style="margin-top: 200px;">
+    <ul id="navbar" style="letter-spacing: 1px; font-family: Arial, sans-serif; font-size: 40px; font-weight: 600; color: #000000;">
+        <li><a href="mainpage.html">Help</a></li>
+        <li><a href="Wishlist.html">About Us</a></li>
+        <li><a href="Cart.html">Privacy Policy</a></li>
+    </ul>
+    <script>
+        function updatePrice() {
+            var quantity = document.getElementById("numberSelect").value;
+            var basePrice = 1200; 
+            var newPrice = quantity * basePrice;
+            document.getElementById("newPrice").textContent = newPrice;
+        }
+    </script>
+</body>
+</html>
